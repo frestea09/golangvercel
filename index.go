@@ -13,7 +13,7 @@ func main(){
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprint(w,"hello world")
 	})
-	if err:= http.ListenAndServe(":8000", mux); err != nil{
+	if err:= http.ListenAndServe(":8080", mux); err != nil{
 		fmt.Print(err.Error())
 	}
 }
