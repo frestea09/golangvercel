@@ -1,14 +1,17 @@
-package handler
+package main
 
 import (
 	"fmt"
 	"net/http"
 )
 
-func Handler(w http.ResponseWriter, r *http.Request) {
+// Handler untuk endpoint "/comment"
+func commentHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "hello world")
+}
 
-    w.Header().Set("Content-Type", "text/html") // Set the correct content type
+func main() {
+	http.HandleFunc("/comment", commentHandler)
 
-    fmt.Fprintf(w, "<h1>Hello from Go!</h1>")
-
+	// Vercel akan menjalankan fungsi ini, jadi tidak perlu menjalankan server secara manual
 }
