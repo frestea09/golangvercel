@@ -1,26 +1,16 @@
 // api/index.go
-package main
+
+package handler
 
 import (
 	"fmt"
 	"net/http"
 )
 
+// Handler adalah fungsi yang menangani permintaan HTTP
+
 func Handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "<h1>Hello from Go!</h1>")
-}
 
-
-func main() {
-
-    http.HandleFunc("/", Handler)
-
-    fmt.Println("Server is running on http://localhost:3000")
-
-    if err := http.ListenAndServe(":3000", nil); err != nil {
-
-        fmt.Println(err)
-
-    }
+	fmt.Fprintf(w, "<h1>Hello from Go!</h1>")
 
 }
